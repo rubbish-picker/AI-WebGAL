@@ -1,0 +1,28 @@
+codes modified:
+packages\webgal\src\store\store.ts
+packages\webgal\src\store\stageReducer.ts
+packages\webgal\src\Core\controller\gamePlay\scriptExecutor.ts
+packages\webgal\src\Core\controller\gamePlay\nextSentence.ts
+packages\webgal\src\Core\controller\gamePlay\backToTitle.ts
+packages\webgal\src\Core\controller\storage\loadGame.ts
+packages\webgal\src\Core\util\gameAssetsAccess\assetSetter.ts
+packages\webgal\src\Core\initializeScript.ts
+packages\webgal\src\Core\gameScripts\say.ts
+packages\webgal\src\Core\Modules\backlog.ts
+packages\webgal\src\UI\Backlog\Backlog.tsx
+packages\webgal\src\store\stageInterface.ts
+
+codes added:
+packages\webgal\src\llm\AIBackground.ts
+packages\webgal\src\llm\AICharacter.ts
+packages\webgal\src\llm\AIConfig.ts
+packages\webgal\src\llm\AIFeedback.ts
+packages\webgal\src\llm\AIInterface.ts
+packages\webgal\src\llm\AIMessage.ts
+packages\webgal\src\llm\AIMusic.ts
+packages\webgal\src\llm\AIReducer.ts
+packages\webgal\src\llm\AIScene.ts
+packages\webgal\src\llm\cardManager.ts
+packages\webgal\src\llm\cardParser.ts
+packages\webgal\src\llm\loreInterface.ts
+packages\webgal\src\llm\utils.ts
