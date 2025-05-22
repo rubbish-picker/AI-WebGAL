@@ -1,0 +1,739 @@
+{
+    "live2d_front_match":"<<<",
+    "live2d_back_match":">>>",
+    "live2d_spliter":"|",
+    "live2d_speaker_indicator":[":","："],
+    "live2d_use_strict":"false",
+
+    "speaker_front_match":"[",
+    "speaker_back_match":"]",
+    "speaker_spliter":"|",
+    "speaker_use_strict":"false",
+
+    "bg_front_match":"<<<",
+    "bg_back_match":">>>",
+    "bg_use_strict":"false",
+    "bg_allow_repeat":"false",
+
+    "bgm_front_match":"<<<",
+    "bgm_back_match":">>>",
+    "bgm_use_strict":"false",
+    "bgm_allow_repeat":"false",
+
+    "scene_front_match":"<<<",
+    "scene_back_match":">>>",
+    "scene_use_strict":"false",
+    "scene_allow_repeat":"false",
+
+    "memory_front_match":"[[[",
+    "memory_back_match":"]]]",
+    
+    "paragraph_spliter":">>>",
+    "sentence_spliter":["。", "！", "？", ".", "!", "?", "\n", "；", ";", "）", ")", "】", "]", "》", ">"],
+    "close_punctuation" : ["”", "’", "》", "】", "）", "]", ")", ">", "\"", "'", "）", "」"],
+
+    "screen_border_left":-1300,
+    "screen_border_right":1300,
+    "standard_character_gap":600,
+    "position_change_factor":0.7,
+
+    "scene_table":
+    [
+        {
+            "start.txt":{
+                "祥子回家":"",
+                "祥子加班":"",
+                "不变":""
+            }
+        },
+        {
+            "sakihome.txt":{
+                "上班":"",
+                "不变":""
+            }
+        }
+    ],
+
+    "bg_table":
+    [
+        {"key":"客服中心","value":"N（主角相关工作地点）/N9.jpg"},
+        {"key":"爱音家卧室1","value":"A（anon家）/A1.png"},
+        {"key":"爱音家外","value":"A（anon家）/A3.jpg"},
+        {"key":"爱音家卧室2","value":"A（anon家）/A5.jpg"},
+        {"key":"爽世家门口","value":"B（soyo家）/B7.jpg"},
+        {"key":"爽世家卧室","value":"B（soyo家）/B19.jpg"},
+        {"key":"爽世家客厅","value":"B（soyo家）/B12.png"},
+        {"key":"立希卧室1","value":"C（立希！）/C1.png"},
+        {"key":"立希卧室2","value":"C（立希！）/C2.png"},
+        {"key":"回灯家的路上","value":"D（偷抹零家）/D1.png"},
+        {"key":"灯家卧室","value":"D（偷抹零家）/D4.png"},
+        {"key":"live house刚进门","value":"E（live house）/E4.jpg"},
+        {"key":"live house练习室","value":"E（live house）/E5.png"},
+        {"key":"羽丘校门","value":"F（羽丘）/F1.png"},
+        {"key":"羽丘鞋柜","value":"F（羽丘）/F5.jpg"},
+        {"key":"羽丘楼梯","value":"F（羽丘）/F11.jpg"},
+        {"key":"羽丘天台","value":"F（羽丘）/F18.jpg"},
+        {"key":"羽丘教室","value":"F（羽丘）/F14.png"},
+        {"key":"月之森校门","value":"G（月之森）/G1.png"},
+        {"key":"月之森教室","value":"G（月之森）/G5.png"},
+        {"key":"月之森长椅","value":"G（月之森）/G9.png"},
+        {"key":"花咲川校门","value":"H（花咲川）/H1.png"},
+        {"key":"花咲川鞋柜","value":"H（花咲川）/H5.png"},
+        {"key":"舞台中央","value":"I（舞台）/I2.png"},
+        {"key":"电车","value":"K（生活地点）/K2.jpg"},
+        {"key":"商场","value":"K（生活地点）/K12.jpg"},
+        {"key":"餐厅","value":"K（生活地点）/K17.jpg"},
+        {"key":"车站","value":"K（生活地点）/K25.jpg"},
+        {"key":"路边1","value":"L（路边）/L1.png"},
+        {"key":"路边5","value":"L（路边）/L5.png"},
+        {"key":"路边10","value":"L（路边）/L10.png"},
+        {"key":"街道1","value":"M（街道）/M1.png"},
+        {"key":"街道10","value":"M（街道）/M10.png"},
+        {"key":"街道21","value":"M（街道）/M21.jpg"},
+        {"key":"睦和祥子谈话的咖啡厅","value":"N（主角相关工作地点）/N1.png"},
+        {"key":"豪华的祥子家外","value":"U（大祥老师家）/U1.jpg"},
+        {"key":"简陋的祥子家","value":"U（大祥老师家）/U3.jpg"}
+    ],
+
+    "bgm_table":
+    [
+        {"key":"办公室白噪音","value":"办公室白噪音.m4a"},
+        {"key":"可爱的纸鹤","value":"可憐なカミツレ.m4a"},
+        {"key":"雨水中的忧愁","value":"雨滴.mp3"},
+        {"key":"忧郁的少女","value":"亚麻色头发的少女.mp3"},
+        {"key":"跃动的心","value":"跃动的心.mp3"},
+        {"key":"悠闲中的怅然","value":"表里一体.mp3"},
+        {"key":"残酷而冷漠","value":"可怜的娃娃.mp3"},
+        {"key":"平淡","value":"自我世界.mp3"},
+        {"key":"直爽的女人","value":"冷酷怪人.mp3"},
+        {"key":"乐奈","value":"反复无常的野猫.mp3"},
+        {"key":"日常的时光","value":"珍贵时光.mp3"},
+        {"key":"飞快的开心","value":"心跳加速.mp3"},
+        {"key":"宁静的午后","value":"宁静的午后.mp3"},
+        {"key":"月之森女子学院","value":"月之森女子学院.mp3"},
+        {"key":"明亮","value":"往昔之光.mp3"},
+        {"key":"真实的危机","value":"真实.mp3"},
+        {"key":"月光下的惆怅","value":"月光.mp3"},
+        {"key":"校园生活","value":"校园生活.mp3"},
+        {"key":"愉悦时光","value":"愉悦时光.mp3"},
+        {"key":"神秘少女","value":"神秘少女.mp3"},
+        {"key":"悄悄地","value":"暗影之中.mp3"},
+        {"key":"日常","value":"日常.mp3"},
+        {"key":"训练时光","value":"稀客.mp3"},
+        {"key":"想成为人的歌","value":"想成为人的歌.mp3"}
+    ],
+
+    "figure_table":
+    [
+        {
+            "speaker": "丰川祥子",
+            "default_live2d_path": "sakiko/casual/model.json",
+            "refer_table": 
+            {
+                "倾听": 
+                [
+                    {
+                        "motion": "sakiko_thinking02",
+                        "expression": "sakiko_thinking01"
+                    },
+                    {
+                        "motion": "sakiko_thinking01",
+                        "expression": "sakiko_thinking02"
+                    },
+                    {
+                        "motion": "sakiko_nod01",
+                        "expression": "sakiko_idle01"
+                    },
+                    {
+                        "motion": "sakiko_serious02",
+                        "expression": "sakiko_serious02"
+                    }
+                ],
+                "坚定": 
+                [
+                    {
+                        "motion": "sakiko_serious01",
+                        "expression": "sakiko_serious01"
+                    },
+                    {
+                        "motion": "sakiko_serious02",
+                        "expression": "sakiko_serious02"
+                    }
+                ],
+                "害羞": 
+                [
+                    {
+                        "motion": "sakiko_smile01",
+                        "expression": "sakiko_cry03"
+                    },
+                    {
+                        "motion": "sakiko_shame01",
+                        "expression": "sakiko_cry02"
+                    }
+                ],
+                "悲伤": 
+                [
+                    {
+                        "motion": "sakiko_sad01",
+                        "expression": "sakiko_sad02"
+                    },
+                    {
+                        "motion": "sakiko_sad02",
+                        "expression": "sakiko_cry01"
+                    }
+                ],
+                "惊讶": 
+                [
+                    {
+                        "motion": "sakiko_surprised01",
+                        "expression": "sakiko_surprised01"
+                    },
+                    {
+                        "motion": "sakiko_surprised01",
+                        "expression": "sakiko_surprised02"
+                    }
+                ],
+                "害怕": 
+                [
+                    {
+                        "motion": "sakiko_surprised02",
+                        "expression": "sakiko_surprised02"
+                    },
+                    {
+                        "motion": "sakiko_nnf04",
+                        "expression": "sakiko_surprised02"
+                    }
+                ],
+                "无奈": 
+                [
+                    {
+                        "motion": "sakiko_sigh01",
+                        "expression": "sakiko_sigh01"
+                    },
+                    {
+                        "motion": "sakiko_sigh01",
+                        "expression": "sakiko_sigh02"
+                    }
+                ],
+                "生气": 
+                [
+                    {
+                        "motion": "sakiko_angry03",
+                        "expression": "sakiko_angry01"
+                    },
+                    {
+                        "motion": "sakiko_angry05",
+                        "expression": "sakiko_angry07"
+                    },
+                    {
+                        "motion": "sakiko_angry06",
+                        "expression": "sakiko_angry02"
+                    }
+                ],
+                "高兴": 
+                [
+                    {
+                        "motion": "sakiko_bye02",
+                        "expression": "sakiko_smile02"
+                    },
+                    {
+                        "motion": "sakiko_smile01",
+                        "expression": "sakiko_smile02"
+                    },
+                    {
+                        "motion": "sakiko_smile03",
+                        "expression": "sakiko_smile01"
+                    },
+                    {
+                        "motion": "sakiko_smile06",
+                        "expression": "sakiko_smile02"
+                    },
+                    {
+                        "motion": "sakiko_smile06",
+                        "expression": "sakiko_idle01"
+                    }
+                ],
+                "微笑": 
+                [
+                    {
+                        "motion": "sakiko_smile01",
+                        "expression": "sakiko_smile01"
+                    },
+                    {
+                        "motion": "sakiko_smile02",
+                        "expression": "sakiko_smile02"
+                    }
+                ]
+            }
+        },
+        {
+            "speaker": "千早爱音",
+            "default_live2d_path": "anon/casual/model.json",
+            "refer_table":
+            {
+                "活泼":
+                [
+                    {
+                        "motion": "anon_idle01",
+                        "expression": "anon_smile01"
+                    },
+                    {
+                        "motion": "anon_nf01",
+                        "expression": "anon_smile02"
+                    }
+                ],
+                "微笑":
+                [
+                    {
+                        "motion": "anon_smile01",
+                        "expression": "anon_smile01"
+                    },
+                    {
+                        "motion": "anon_smile02",
+                        "expression": "anon_smile02"
+                    },
+                    {
+                        "motion": "anon_smile03",
+                        "expression": "anon_smile03"
+                    }
+                ],
+                "惊讶":
+                [
+                    {
+                        "motion": "anon_surprised01",
+                        "expression": "anon_surprised01"
+                    }
+                ],
+                "悲伤":
+                [
+                    {
+                        "motion": "anon_sad01",
+                        "expression": "anon_sad01"
+                    },
+                    {
+                        "motion": "anon_sad01",
+                        "expression": "anon_cry01"
+                    }
+                ],
+                "开心":
+                [
+                    {
+                        "motion": "anon_smile03",
+                        "expression": "anon_smile04"
+                    },
+                    {
+                        "motion": "anon_smile03",
+                        "expression": "anon_smile03"
+                    }
+                ],
+                "生气":
+                [
+                    {
+                        "motion": "anon_angry01",
+                        "expression": "anon_angry01"
+                    },
+                    {
+                        "motion": "anon_angry01",
+                        "expression": "anon_angry02"
+                    }
+                ],
+                "坚定":
+                [
+                    {
+                        "motion": "anon_serious01",
+                        "expression": "anon_serious01"
+                    },
+                    {
+                        "motion": "anon_serious01",
+                        "expression": "anon_serious02"
+                    }
+                ],
+                "害怕":
+                [
+                     {
+                        "motion": "sakiko_surprised02",
+                        "expression": "sakiko_surprised02"
+                    },
+                    {
+                        "motion": "sakiko_nnf04",
+                        "expression": "sakiko_surprised02"
+                    }
+                ],
+                "无奈":
+                [
+                    {
+                        "motion": "sakiko_sigh01",
+                        "expression": "sakiko_sigh01"
+                    },
+                    {
+                        "motion": "sakiko_sigh01",
+                        "expression": "sakiko_sigh02"
+                    }
+                ],
+                "思考":
+                [
+                    {
+                        "motion": "anon_thinking01",
+                        "expression": "anon_thinking01"
+                    },
+                    {
+                        "motion": "anon_thinking02",
+                        "expression": "anon_thinking02"
+                    }
+                ]
+            }
+        },
+        {
+            "speaker": "长崎爽世",
+            "default_live2d_path": "soyo/casual/model.json",
+            "refer_table":
+            {
+                "微笑":
+                [
+                    {
+                        "motion": "soyo_smile01",
+                        "expression": "soyo_smile01"
+                    },
+                    {
+                        "motion": "soyo_smile02",
+                        "expression": "soyo_smile02"
+                    },
+                    {
+                        "motion": "soyo_smile03",
+                        "expression": "soyo_smile03"
+                    }
+                ],
+                "害怕":
+                [
+                    {
+                        "motion": "soyo_surprised01",
+                        "expression": "soyo_surprised01"
+                    },
+                    {
+                        "motion": "soyo_odoodo01",
+                        "expression": "soyo_odoodo01"
+                    }
+                ],
+                "惊讶":
+                [
+                    {
+                        "motion": "soyo_surprised01",
+                        "expression": "soyo_surprised01"
+                    },
+                    {
+                        "motion": "soyo_odoodo01",
+                        "expression": "soyo_odoodo01"
+                    }
+                ],
+                "悲伤":
+                [
+                    {
+                        "motion": "soyo_sad01",
+                        "expression": "soyo_sad01"
+                    },
+                    {
+                        "motion": "soyo_sad02",
+                        "expression": "soyo_sad02"
+                    },
+                    {
+                        "motion": "soyo_cry01",
+                        "expression": "soyo_cry01"
+                    }
+                ],
+                "开心":
+                [
+                    {
+                        "motion": "soyo_smile04",
+                        "expression": "soyo_smile04"
+                    },
+                    {
+                        "motion": "soyo_smile05",
+                        "expression": "soyo_smile05"
+                    },
+                    {
+                        "motion": "soyo_wink01",
+                        "expression": "soyo_wink01"
+                    }
+                ],
+                "生气":
+                [
+                    {
+                        "motion": "soyo_angry01",
+                        "expression": "soyo_angry01"
+                    },
+                    {
+                        "motion": "soyo_angry02",
+                        "expression": "soyo_angry02"
+                    },
+                    {
+                        "motion": "soyo_angry03",
+                        "expression": "soyo_angry03"
+                    }
+                ],
+                "坚定":
+                [
+                    {
+                        "motion": "soyo_serious01",
+                        "expression": "soyo_serious01"
+                    },
+                    {
+                        "motion": "soyo_serious02",
+                        "expression": "soyo_serious02"
+                    },
+                    {
+                        "motion": "soyo_kime01",
+                        "expression": "soyo_kime01"
+                    }
+                ],
+                "害羞":
+                [
+                    {
+                        "motion": "soyo_shame01",
+                        "expression": "soyo_shame01"
+                    },
+                    {
+                        "motion": "soyo_shame02",
+                        "expression": "soyo_shame02"
+                    }
+                ],
+                "思考":
+                [
+                    {
+                        "motion": "soyo_thinking01",
+                        "expression": "soyo_thinking01"
+                    },
+                    {
+                        "motion": "soyo_thinking02",
+                        "expression": "soyo_thinking02"
+                    }
+                ],
+                "无奈":
+                [
+                    {
+                        "motion": "soyo_ando01",
+                        "expression": "soyo_ando01"
+                    },
+                    {
+                        "motion": "soyo_sad03",
+                        "expression": "soyo_sad03"
+                    }
+                ]
+            }
+        },
+        {
+            "speaker": "高松灯",
+            "default_live2d_path": "tomori/casual/model.json",
+            "refer_table":
+            {
+                "微笑":
+                [
+                    {
+                        "motion": "tomori_smile01",
+                        "expression": "tomori_smile01"
+                    },
+                    {
+                        "motion": "tomori_smile02",
+                        "expression": "tomori_smile02"
+                    },
+                    {
+                        "motion": "tomori_smile03",
+                        "expression": "tomori_smile03"
+                    }
+                ],
+                "惊讶":
+                [
+                    {
+                        "motion": "tomori_surprised01",
+                        "expression": "tomori_surprised01"
+                    },
+                    {
+                        "motion": "tomori_kandou01",
+                        "expression": "tomori_kandou01"
+                    }
+                ],
+                "害怕":
+                [
+                    {
+                        "motion": "tomori_surprised01",
+                        "expression": "tomori_surprised01"
+                    }
+                ],
+                "悲伤":
+                [
+                    {
+                        "motion": "tomori_sad01",
+                        "expression": "tomori_sad01"
+                    },
+                    {
+                        "motion": "tomori_sad02",
+                        "expression": "tomori_sad02"
+                    },
+                    {
+                        "motion": "tomori_cry01",
+                        "expression": "tomori_cry01"
+                    }
+                ],
+                "开心":
+                [
+                    {
+                        "motion": "tomori_smile04",
+                        "expression": "tomori_smile04"
+                    },
+                    {
+                        "motion": "tomori_kandou02",
+                        "expression": "tomori_kandou02"
+                    },
+                    {
+                        "motion": "tomori_kandou03",
+                        "expression": "tomori_kandou03"
+                    }
+                ],
+                "生气":
+                [
+                    {
+                        "motion": "tomori_angry01",
+                        "expression": "tomori_angry01"
+                    },
+                    {
+                        "motion": "tomori_angry02",
+                        "expression": "tomori_angry02"
+                    }
+                ],
+                "坚定":
+                [
+                    {
+                        "motion": "tomori_serious01",
+                        "expression": "tomori_serious01"
+                    },
+                    {
+                        "motion": "tomori_serious02",
+                        "expression": "tomori_serious02"
+                    },
+                    {
+                        "motion": "tomori_kime01",
+                        "expression": "tomori_kime01"
+                    }
+                ],
+                "害羞":
+                [
+                    {
+                        "motion": "tomori_shame01",
+                        "expression": "tomori_shame01"
+                    },
+                    {
+                        "motion": "tomori_shame02",
+                        "expression": "tomori_shame02"
+                    }
+                ],
+                "思考":
+                [
+                    {
+                        "motion": "tomori_thinking01",
+                        "expression": "tomori_thinking01"
+                    },
+                    {
+                        "motion": "tomori_thinking02",
+                        "expression": "tomori_thinking02"
+                    }
+                ],
+                "歌唱":
+                [
+                    {
+                        "motion": "tomori_sing01",
+                        "expression": "tomori_sing01"
+                    },
+                    {
+                        "motion": "tomori_sing02",
+                        "expression": "tomori_sing02"
+                    }
+                ]
+            }
+        },
+        {
+            "speaker": "若叶睦",
+            "default_live2d_path": "mutsumi/casual/model.json",
+            "refer_table":
+            {
+                "微笑":
+                [
+                    {
+                        "motion": "mutsumi_smile01",
+                        "expression": "mutsumi_smile01"
+                    },
+                    {
+                        "motion": "mutsumi_smile02",
+                        "expression": "mutsumi_smile02"
+                    },
+                    {
+                        "motion": "mutsumi_smile04",
+                        "expression": "mutsumi_smile04"
+                    }
+                ],
+                "惊讶":
+                [
+                    {
+                        "motion": "mutsumi_surprised01",
+                        "expression": "mutsumi_surprised01"
+                    }
+                ],
+                "悲伤":
+                [
+                    {
+                        "motion": "mutsumi_sad01",
+                        "expression": "mutsumi_sad01"
+                    },
+                    {
+                        "motion": "mutsumi_sad02",
+                        "expression": "mutsumi_sad01"
+                    }
+                ],
+                "生气":
+                [
+                    {
+                        "motion": "mutsumi_angry01",
+                        "expression": "mutsumi_angry01"
+                    }
+                ],
+                "坚定":
+                [
+                    {
+                        "motion": "mutsumi_kime01",
+                        "expression": "mutsumi_default"
+                    }
+                ],
+                "思考":
+                [
+                    {
+                        "motion": "mutsumi_thinking01",
+                        "expression": "mutsumi_default"
+                    }
+                ],
+                "害怕":
+                [
+                    {
+                        "motion": "mutsumi_odoodo01",
+                        "expression": "sakiko_odoodo01"
+                    }
+                ],
+                "紧张":
+                [
+                    {
+                        "motion": "mutsumi_odoodo01",
+                        "expression": "sakiko_odoodo01"
+                    }
+                ],
+                "日常":
+                [
+                    {
+                        "motion": "mutsumi_idle01",
+                        "expression": "mutsumi_idle01"
+                    },
+                    {
+                        "motion": "mutsumi_bye01",
+                        "expression": "mutsumi_default"
+                    }
+                ]
+            }
+        }
+    ]
+}
