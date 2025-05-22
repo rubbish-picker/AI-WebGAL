@@ -1,5 +1,0 @@
-=== 不存在于model.json中的motion ===
-所有motion都存在于model.json中
-
-=== 不存在于model.json中的expression ===
-所有expression都存在于model.json中
