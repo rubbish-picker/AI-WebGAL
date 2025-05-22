@@ -167,6 +167,7 @@ yarn
 
 ### 角色书和世界书
 - 采用sillytavern(酒馆)格式，可以在sillyTavern上编辑好以后直接导入
+  > *仅支持了一部分参数
 - 如果是自己编写，角色书请参考`example/丰川祥子.json`；世界书请参考`example/mygo.json`
 - 各参数含义请参考[[sillyTavern文档]](https://docs.sillytavern.app/usage/core-concepts/worldinfo/)
 
@@ -178,4 +179,22 @@ yarn
   - [[场景与分支]](https://docs.openwebgal.com/webgal-script/scenes.html)
   - [[变量]](https://docs.openwebgal.com/webgal-script/variable.html)
 
-...还在写，没写完
+### 本项目增补的用于ai对话的参数
+>这些参数都是say（对话）语句下的参数
+- -aichat:表示该对话的回复由ai生成
+  >在-aichat没有添加时，aiexp,aibg,aibgm,aiscene这些参数会被无视
+- -aiexp:表示该对话的live2D由ai控制
+- -aibg:表示该对话的背景图片由ai控制
+- -aibgm:表示该对话的背景音乐由ai控制
+- -needpoint:表示收到ai回复后是否需要再点一下才显示ai回复
+
+### 作为样例的start.txt解析
+- label与jumpLabel: 构成死循环，使你可以不停与ai对话
+- getUserInput 该句获取用户输入并放在变量prompt中
+- 你: {prompt}; 该句用于显示用户输入的话，其中说话人"你"需要与`global.json`的user_name保持一致
+- ai: -aichat -aiexp -aibg -aibgm;该句发起API调用。其中说话人ai显示`global.json`中的waiting_info时的说话人
+  你无需在该行添加{prompt}。因为你的输入已经在上一句"你: {prompt};"中显示，因此已经加入了backlog，会被作为历史对话提交给ai
+- 如果你执意在改行添加额外内容
+  - 例如：
+    ai: 请用中文回复 -aichat -aiexp -aibg -aibgm;
+    则“请用中文回复”这个prompt不会显示，但会作为每次执行该行API对话时的后置词提交给ai
