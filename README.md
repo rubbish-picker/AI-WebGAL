@@ -1,8 +1,11 @@
-## 第三方代码声明
+# AI-WebGAL
+enable AI-generated visual novel by modifying the source code of webgal engine
 
-- 原项目：WebGAL  by OpenWebGAL
-  许可证：Mozilla Public License 2.0
-  代码来源：[[GitHub 链接]](https://github.com/OpenWebGAL/WebGAL)
-  代码修改与增添：见`modification.txt`
+## Code From Third Party
 
-## 完整的README正在撰写中
+- Original project：WebGAL  by OpenWebGAL
+  License：Mozilla Public License 2.0
+  Source code：[[GitHub 链接]](https://github.com/OpenWebGAL/WebGAL)
+  Modification：See `modification.txt`
+
+## The complete README is currently being written.
