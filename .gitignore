@@ -28,3 +28,4 @@ packages/webgal/public/game.old
 packages/parser/build
 packages/webgal/src/Core/util/pixiPerformManager/initRegister.ts
 packages/webgal/public/game/
+packages/webgal/public/game/AIconfig/global.json
