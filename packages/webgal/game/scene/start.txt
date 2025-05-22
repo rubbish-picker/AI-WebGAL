@@ -1,0 +1,6 @@
+label: label1;
+getUserInput: prompt -title=... -buttonText=sure;
+你: {prompt};
+ai: -aichat -aiexp -aibg -aibgm;
+ai: -aichat -aiexp -aibg -aibgm;
+jumpLabel: label1;
