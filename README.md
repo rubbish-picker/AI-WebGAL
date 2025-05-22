@@ -194,7 +194,9 @@ yarn
 - 你: {prompt}; 该句用于显示用户输入的话，其中说话人"你"需要与`global.json`的user_name保持一致
 - ai: -aichat -aiexp -aibg -aibgm;该句发起API调用。其中说话人ai显示`global.json`中的waiting_info时的说话人
   你无需在该行添加{prompt}。因为你的输入已经在上一句"你: {prompt};"中显示，因此已经加入了backlog，会被作为历史对话提交给ai
-- 如果你执意在改行添加额外内容
+- 如果你执意在该行添加额外内容
   - 例如：
     ai: 请用中文回复 -aichat -aiexp -aibg -aibgm;
     则“请用中文回复”这个prompt不会显示，但会作为每次执行该行API对话时的后置词提交给ai
+
+> 关于jumpLabel回跳在4.5.12 中有bug的问题，详见"常见问题"
