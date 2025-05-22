@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# 忽略packages/webgal/public/game目录的更改，但保留文件在仓库中
+packages/webgal/public/game/** -diff
