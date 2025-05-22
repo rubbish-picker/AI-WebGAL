@@ -177,3 +177,5 @@ yarn
   - [[对话]](https://docs.openwebgal.com/webgal-script/dialogue.html)
   - [[场景与分支]](https://docs.openwebgal.com/webgal-script/scenes.html)
   - [[变量]](https://docs.openwebgal.com/webgal-script/variable.html)
+
+...还在写，没写完
