@@ -49,16 +49,16 @@ yarn
 
 ## AIconfig编写
 > 该配置较为重要。你的prompt将决定模型是否能按照固定格式输出说话人、LIVE2D动作和表情、背景图片、背景音乐、场景等。
-您可以不修改我给出的样例（除了填入您自己的APIKey以外），这样也能取得不错的效果。但仍推荐您自己进行修改，毕竟我很多都是用ai写的。另外，即使不修改您也需要提供与配置文件相应的素材。
+您可以不修改我给出的样例（除了填入您自己的APIKey以外），这样也能取得不错的效果。但仍推荐您自己进行修改，毕竟我很多都是用ai写的。另外，即使不修改您也需要获取与配置文件相应的素材。
 
 - 所有的AIconfig文件位于`packages\webgal\public\game\AIconfig`下
-- AIconfig文件即所有的有关大语言模型输入输出的配置，包括global.json,controls.json,cardTable.json以及角色书和世界/知识书。
+- AIconfig文件即所有的有关大语言模型输入输出的配置，包括global.json,controls.json,cardTable.json以及角色卡和世界/知识书。
 - 您需要将您的所有角色卡和世界/知识书放在该目录下，您可以对它们随意命名，除了以下三个保留字不允许使用：global.json,controls.json和cardTable.json
 > 以后会更新用来编辑这些配置文件的UI，现在如果嫌麻烦可以用ROOCODE让AI帮你写
 
 ### cardTable.json:
 该文件中存放的是需要被程序读取的配置卡的名称。其中必须包含global和controls
-- 当您新增配置卡并且需要使用时后，您需要将其名称填入cardTable.json
+- 当您新增配置卡并且需要使用时，您需要将其名称填入cardTable.json
 
 ### global.json:
 参考已经给出的`packages\webgal\public\game\AIconfig\global.json`
@@ -138,7 +138,7 @@ yarn
 
 #### 段和句的配置
 - 段：每一次模型给出的完整回复称为一段
-- 句：一般而言，认为对应了唯一的说话人列表、live2D显示列表、背景图片、背景音乐、场景切换指令的一段话中的一部分成为一句
+- 句：一般而言，认为对应了唯一的说话人列表、live2D显示列表、背景图片、背景音乐、场景切换指令的为一句。
   - 例如模型输出：你好\<\<\<丰川祥子：微笑>>>\n我不好\<\<\<千早爱音：害怕>>>
   则会被认为是一段中有两句
 - paragraph_spliter: 把段分成句的分割符，该分割符不会被除去
@@ -154,7 +154,7 @@ yarn
 
 ### 完整样例：
 - 假如模型回复:
-  欧内该！瓦达西！[长崎爽世]\<\<\<长崎爽世: 害怕|丰川祥子:无奈,月之森校门,真实的危机>>>\n你这个人满脑子都想着你自己呢。[丰川祥子]\<\<\<丰川祥子: 生气,月之森校门,真实的危机>>>
+  xxx,xxx！[长崎爽世]\<\<\<长崎爽世: 害怕|丰川祥子:无奈,月之森校门,真实的危机>>>\n xxxxxxxxxxxxxx。[丰川祥子]\<\<\<丰川祥子: 生气,月之森校门,真实的危机>>>
   并采用给出的controls.json样例
   则：
   - 模型将一段切分为两句
@@ -165,10 +165,10 @@ yarn
     - 在对话框显示相应对话。说话人是长崎爽世
   > 实际上在bgm格式区内的文字是"长崎爽世: 害怕|丰川祥子:无奈,月之森校门,真实的危机"但因为不是严格模式，所以看这串字符串包括了什么，它包括了关键词真实的危机，因此播放"真实.mp3"。但如果你的某首bgm的关键词是"月之森校门"，就不可以像这样安排格式了。
 
-### 角色书和世界书
+### 角色卡和世界书
 - 采用sillytavern(酒馆)格式，可以在sillyTavern上编辑好以后直接导入
   > *仅支持了一部分参数
-- 如果是自己编写，角色书请参考`example/丰川祥子.json`；世界书请参考`example/mygo.json`
+- 如果是自己编写，角色卡请参考`example/丰川祥子.json`；世界书请参考`example/mygo.json`
 - 各参数含义请参考[[sillyTavern文档]](https://docs.sillytavern.app/usage/core-concepts/worldinfo/)
 
 ## scene编写
@@ -182,7 +182,7 @@ yarn
 ### 本项目增补的用于ai对话的参数
 >这些参数都是say（对话）语句下的参数
 - -aichat:表示该对话的回复由ai生成
-  >在-aichat没有添加时，aiexp,aibg,aibgm,aiscene这些参数会被无视
+  >在-aichat没有添加时，aiexp,aibg,aibgm,aiscene,needpoint这些参数会被无视
 - -aiexp:表示该对话的live2D由ai控制
 - -aibg:表示该对话的背景图片由ai控制
 - -aibgm:表示该对话的背景音乐由ai控制
@@ -202,4 +202,41 @@ yarn
 > 关于jumpLabel回跳在4.5.12 中有bug的问题，详见"常见问题"
 
 # 全部prompt提交顺序
+- 1. global_front_prompt:global.json中的front_prompt
+  提交者：system
+- 2. format_prompt: global.json中的format_prompt
+  提交者：system
+- 3. before_character_lore: 角色前世界书
+  提交者：以世界书要求的role为准
+- 4. chara_content: 角色卡中的角色描述
+  提交者：system
+- 5. after_character_lore: 角色后世界书
+  提交者：以世界书要求的role为准
+- 6. history_content&lore_with_depth: 历史对话和带有深度的世界书
+  提交者：历史对话以说话人为准，世界书以世界书要求的role为准
+  > 世界书的深度指示了其应该插入在历史对话的什么位置
+- 7. back_prompt: 单次对话的后置词。见上文"作为样例的start.txt解析"中"如果你执意在该行添加额外内容"。
+  提交者：user
+- 8. global_back_prompt:global.json中的back_prompt
+  提交者：user
 # 常见问题
+- Q: jumpLabel回跳在webgal 4.5.12 中有bug，而该项目是基于4.5.12改写的。
+  A: 该问题已经在webgal 4.5.13 中被官方修复，由于该项目的编写是基于4.5.12且jumpLabel是ai对话中关键的脚本语句，故本项目中该bug也是被修复了的。但由于我没有详细阅读过4.5.13的源码，不能保证修复方式和官方一致。
+  > 由jumpLabel回跳引起的backlog显示问题也是被修复了的
+  <br>
+- Q: API_max_trying_limit的含义
+  A: 当API返回空的时候，重新发送API请求的最大次数
+  API返回空可能是以下原因造成的
+  - 如果您使用的是openrouter的API，那可能是因为您提交的prompt中在靠后的位置user占比太少导致的(不知道为什么会这样，但这是我大量实验得出的)。所有back_prompt被设置为user也是出于这个考虑。因此，请尽量不要让global.json中的back_prompt为空。
+  - 如果您使用模型是gemini，那可能是因为谷歌截断了不合规的内容。考虑更换模型或者修改提示词。
+  <br>
+- Q: Backlog回溯和存读档能否正常使用？
+- A: 能。
+  <br>
+- Q: 在等待AI回复的时候进行了读档操作会怎么样？
+- A: AI回复会被丢弃
+  <br>
+- Q: 是否只能用于Mygo&Avemujica？
+- A: 并非。大部分样例都是Mygo&Avemujica是因为我只有这些素材。
+
+# 其余问题正在debug中
