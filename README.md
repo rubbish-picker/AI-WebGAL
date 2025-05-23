@@ -226,7 +226,7 @@ yarn
   <br>
 - Q: API_max_trying_limit的含义  
   A: 当API返回空的时候，重新发送API请求的最大次数  
-  API返回空可能是以下原因造成的
+  > API返回空可能是以下原因造成的
   - 如果您使用的是openrouter的API，那可能是因为您提交的prompt中在靠后的位置user占比太少导致的(不知道为什么会这样，但这是我大量实验得出的)。所有back_prompt被设置为user也是出于这个考虑。因此，请尽量不要让global.json中的back_prompt为空。
   - 如果您使用模型是gemini，那可能是因为谷歌截断了不合规的内容。考虑更换模型或者修改提示词。
   <br>
