@@ -229,14 +229,30 @@ yarn
   > API返回空可能是以下原因造成的
   - 如果您使用的是openrouter的API，那可能是因为您提交的prompt中在靠后的位置user占比太少导致的(不知道为什么会这样，但这是我大量实验得出的)。所有back_prompt被设置为user也是出于这个考虑。因此，请尽量不要让global.json中的back_prompt为空。
   - 如果您使用模型是gemini，那可能是因为谷歌截断了不合规的内容。考虑更换模型或者修改提示词。
-  <br>
+  <br>  
 - Q: Backlog回溯和存读档能否正常使用？  
 - A: 能。  
-  <br>
+  <br>  
 - Q: 在等待AI回复的时候进行了读档操作会怎么样？  
 - A: AI回复会被丢弃  
-  <br>
+  <br>  
 - Q: 是否只能用于Mygo&Avemujica？  
 - A: 并非。大部分样例都是Mygo&Avemujica是因为我只有这些素材。
-
+  <br>  
+- Q: 如何查看AI完整回复和是否进行了live2D调用等信息？
+- A: 浏览器F12查看控制台日志。本项目日志格式与webgal本身就有的日志格式保持相同。
+  <br>  
+- Q: 我需要在与AI对话2次后结束对话并进行别的演出
+- A: 示例start.txt脚本如下:
+  ```
+  setVar: CX=2;
+  label: label1;
+  getUserInput: prompt -title=... -buttonText=sure;
+  你: {prompt};
+  ai: -aichat -aiexp -aibg -aibgm;
+  setVar: CX=CX-1
+  jumpLabel: label1 -when=CX>0;
+  说话人: 别的演出;
+  ```
+  
 # 其余问题正在debug中
