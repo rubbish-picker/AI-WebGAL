@@ -162,7 +162,7 @@ yarn
     - 根据figure_table中的refer_table播放长崎爽世和丰川祥子的live2D
     - 切换背景为"G（月之森）/G1.png"
     - 切换bgm为"真实.mp3"
-    - 在对话框显示相应对话。说话人是长崎爽世
+    - 在对话框显示相应对话。说话人是长崎爽世。如果句子过长则切成分句依次显示。
   > 实际上在bgm格式区内的文字是"长崎爽世: 害怕|丰川祥子:无奈,月之森校门,真实的危机"但因为不是严格模式，所以看这串字符串包括了什么，它包括了关键词真实的危机，因此播放"真实.mp3"。但如果你的某首bgm的关键词是"月之森校门"，就不可以像这样安排格式了。
 
 ### 角色卡和世界书
@@ -202,17 +202,17 @@ yarn
 > 关于jumpLabel回跳在4.5.12 中有bug的问题，详见"常见问题"
 
 # 全部prompt提交顺序
-- 1. global_front_prompt:global.json中的front_prompt
+- 1. global_front_prompt:global.json中的front_prompt  
   提交者：system
-- 2. format_prompt: global.json中的format_prompt
+- 2. format_prompt: global.json中的format_prompt  
   提交者：system
-- 3. before_character_lore: 角色前世界书
+- 3. before_character_lore: 角色前世界书  
   提交者：以世界书要求的role为准
-- 4. chara_content: 角色卡中的角色描述
+- 4. chara_content: 角色卡中的角色描述  
   提交者：system
-- 5. after_character_lore: 角色后世界书
+- 5. after_character_lore: 角色后世界书  
   提交者：以世界书要求的role为准
-- 6. history_content&lore_with_depth: 历史对话和带有深度的世界书
+- 6. history_content&lore_with_depth: 历史对话和带有深度的世界书  
   提交者：历史对话以说话人为准，世界书以世界书要求的role为准
   > 世界书的深度指示了其应该插入在历史对话的什么位置
 - 7. back_prompt: 单次对话的后置词。见上文"作为样例的start.txt解析"中"如果你执意在该行添加额外内容"。
