@@ -68,11 +68,11 @@ yarn
 - user_name: 大模型将什么名称的说话人认为是用户。在通过API向大模型提交对话历史(backlog)的时候，程序区分一段话是用户输入还是模型或是系统输出，依靠的是这段话的说话人是否是user_name。
 
 - context_item_length: 上下文数量。即向模型提交的历史中最多包含最近的多少次对话。请注意你输入一句AI回复一句算两次对话
-- lore_search_length: 世界书搜索长度。即最近多少次对话会被纳入世界书
+- lore_search_length: 世界书搜索长度。即最近多少次对话会被纳入世界书搜索范围
 - API_max_trying_limit: API回复最大重试次数。详见"常见问题"
 - waiting_info: 等待AI回复时显示的信息。在backlog中显示，但不会成为向AI提交的对话历史的一部分。
 - model: 模型名称
-- format_prompt: 格式提示词。规范AI输出的格式方便程序提取并应用相应LIVE2D、背景、bgm等。需要与controls.json中规定的格式向对应。懒得写可以叫AI帮忙写。
+- format_prompt: 格式提示词。规范AI输出的格式方便程序提取并应用相应LIVE2D、背景、bgm等。需要与controls.json中规定的格式相对应。懒得写可以叫AI帮忙写。
 - back_prompt: 全局后置提示词。详见"全部prompt提交顺序"
 - front_prompt: 全局前置提示词。
 
@@ -105,14 +105,14 @@ yarn
 - 由memory_front_match和memory_back_match包裹。你可以将你给模型规定的状态栏/长短期记忆等放在此处，它会在输出给用户的时候被除去，但作为历史返回给模型的时候会被保留。除此之外没有别的功能。
 
 #### bg_table
-- 参考样例即可。将希望模型输出的关键词和对应文件分别放在key和value中
+- 参考样例即可。将希望模型输出的关键词和对应文件名分别写在key和value中
 
 #### bgm_table
 - 同上
 
 #### scene_table
 - scene_table是在大模型在对应格式区域输出关键词后用于切换对应场景的
-- xxx.txt:作为键的xxx.txt表示其后面的关键词-场景文件键值对只在当前场景为xxx.txt的时候生效
+- xxx.txt: 作为键的xxx.txt表示其后面的关键词-场景文件名键值对只在当前场景为xxx.txt的时候生效
 - 例如："start.txt":{
             "祥子回家":"sakihome.txt",
             "祥子加班":"",
@@ -163,7 +163,7 @@ yarn
     - 切换背景为"G（月之森）/G1.png"
     - 切换bgm为"真实.mp3"
     - 在对话框显示相应对话。说话人是长崎爽世。如果句子过长则切成分句依次显示。
-  > 实际上在bgm格式区内的文字是"长崎爽世: 害怕|丰川祥子:无奈,月之森校门,真实的危机"但因为不是严格模式，所以看这串字符串包括了什么，它包括了关键词真实的危机，因此播放"真实.mp3"。但如果你的某首bgm的关键词是"月之森校门"，就不可以像这样安排格式了。
+  > 实际上在bgm格式区内的文字是"长崎爽世: 害怕|丰川祥子:无奈,月之森校门,真实的危机"但因为不是严格模式，所以看这串字符串包括了什么，它包括了关键词真实的危机，因此播放"真实.mp3"。但如果你有另一首bgm的关键词是"月之森校门"，就不可以像这样安排格式了。
 
 ### 角色卡和世界书
 - 采用sillytavern(酒馆)格式，可以在sillyTavern上编辑好以后直接导入
@@ -192,8 +192,8 @@ yarn
 - label与jumpLabel: 构成死循环，使你可以不停与ai对话
 - getUserInput 该句获取用户输入并放在变量prompt中
 - 你: {prompt}; 该句用于显示用户输入的话，其中说话人"你"需要与`global.json`的user_name保持一致
-- ai: -aichat -aiexp -aibg -aibgm;该句发起API调用。其中说话人ai显示`global.json`中的waiting_info时的说话人
-  你无需在该行添加{prompt}。因为你的输入已经在上一句"你: {prompt};"中显示，因此已经加入了backlog，会被作为历史对话提交给ai
+- ai: -aichat -aiexp -aibg -aibgm;该句发起API调用。其中说话人"ai"是显示`global.json`中waiting_info时的说话人
+  你无需在该行再次添加{prompt}。因为它已经在上一句"你: {prompt};"中被添加并显示，因此已经加入了backlog，会被作为历史对话提交给ai
 - 如果你执意在该行添加额外内容
   - 例如：
     ai: 请用中文回复 -aichat -aiexp -aibg -aibgm;
@@ -202,7 +202,7 @@ yarn
 > 关于jumpLabel回跳在4.5.12 中有bug的问题，详见"常见问题"
 
 # 全部prompt提交顺序
-- 1. global_front_prompt:global.json中的front_prompt  
+- 1. global_front_prompt: global.json中的front_prompt  
   提交者：system
 - 2. format_prompt: global.json中的format_prompt  
   提交者：system
@@ -215,28 +215,28 @@ yarn
 - 6. history_content&lore_with_depth: 历史对话和带有深度的世界书  
   提交者：历史对话以说话人为准，世界书以世界书要求的role为准
   > 世界书的深度指示了其应该插入在历史对话的什么位置
-- 7. back_prompt: 单次对话的后置词。见上文"作为样例的start.txt解析"中"如果你执意在该行添加额外内容"。
+- 7. back_prompt: 单次对话的后置词。见上文"作为样例的start.txt解析"中"如果你执意在该行添加额外内容"。  
   提交者：user
-- 8. global_back_prompt:global.json中的back_prompt
+- 8. global_back_prompt:global.json中的back_prompt  
   提交者：user
 # 常见问题
-- Q: jumpLabel回跳在webgal 4.5.12 中有bug，而该项目是基于4.5.12改写的。
+- Q: jumpLabel回跳在webgal 4.5.12 中有bug，而该项目是基于4.5.12改写的。  
   A: 该问题已经在webgal 4.5.13 中被官方修复，由于该项目的编写是基于4.5.12且jumpLabel是ai对话中关键的脚本语句，故本项目中该bug也是被修复了的。但由于我没有详细阅读过4.5.13的源码，不能保证修复方式和官方一致。
   > 由jumpLabel回跳引起的backlog显示问题也是被修复了的
   <br>
-- Q: API_max_trying_limit的含义
+- Q: API_max_trying_limit的含义  
   A: 当API返回空的时候，重新发送API请求的最大次数
   API返回空可能是以下原因造成的
   - 如果您使用的是openrouter的API，那可能是因为您提交的prompt中在靠后的位置user占比太少导致的(不知道为什么会这样，但这是我大量实验得出的)。所有back_prompt被设置为user也是出于这个考虑。因此，请尽量不要让global.json中的back_prompt为空。
   - 如果您使用模型是gemini，那可能是因为谷歌截断了不合规的内容。考虑更换模型或者修改提示词。
   <br>
-- Q: Backlog回溯和存读档能否正常使用？
-- A: 能。
+- Q: Backlog回溯和存读档能否正常使用？  
+- A: 能。  
   <br>
-- Q: 在等待AI回复的时候进行了读档操作会怎么样？
-- A: AI回复会被丢弃
+- Q: 在等待AI回复的时候进行了读档操作会怎么样？  
+- A: AI回复会被丢弃  
   <br>
-- Q: 是否只能用于Mygo&Avemujica？
+- Q: 是否只能用于Mygo&Avemujica？  
 - A: 并非。大部分样例都是Mygo&Avemujica是因为我只有这些素材。
 
 # 其余问题正在debug中
